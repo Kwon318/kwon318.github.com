@@ -7,8 +7,9 @@
         function checkos() {
             var mobileKeyWords = new Array('Android', 'iPhone', 'iPod', 'BlackBerry', 'Windows CE', 'SAMSUNG', 'LG', 'MOT', 'SonyEricsson');
             for (var info in mobileKeyWords) {
-                if (navigator.userAgent == obileKeyWords[info]) {
+                if (navigator.userAgent.match(mobileKeyWords[info]) != null) {
                     obileKeyWords[info]
+                    console.log(obileKeyWords[info])
                     return obileKeyWords[info];
                 }
             }

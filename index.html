@@ -7,9 +7,9 @@
         function checkos(){
             var mobileKeyWords = new Array('iPhone', 'iPod', 'BlackBerry', 'Android', 'Windows CE', 'LG', 'MOT', 'SAMSUNG', 'SonyEricsson');/*기기 변수 설정*/
             var device_name = '';
-            for (var word in mobileKeyWords){
-                if (navigator.userAgent.match(mobileKeyWords[word]) != null){
-                    device_name = mobileKeyWords[word];
+            for (var Info in mobileKeyWords){
+                if (navigator.userAgent.match(mobileKeyWords[Info]) != null){
+                    device_name = mobileKeyWords[Info];
                     break;
                 }
             }
@@ -34,9 +34,6 @@
         }
         else if (mobile == "ios"){
             location.href="https://www.naver.com";
-        }
-        else {
-            alert("test 실패")
         }
     }
 </script>

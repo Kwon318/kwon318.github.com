@@ -7,7 +7,7 @@
         function checkos() {
             var mobileKeyWords = new Array('Android', 'iPhone', 'iPod', 'BlackBerry', 'Windows CE', 'SAMSUNG', 'LG', 'MOT', 'SonyEricsson');
             for (var info in mobileKeyWords) {
-                if (navigator.userAgent.match(mobileKeyWords[info]) != null) {
+                if (navigator.userAgent == obileKeyWords[info]) {
                     obileKeyWords[info]
                     return obileKeyWords[info];
                 }
@@ -25,10 +25,12 @@
         alert("브라우저 접속입니다.")
     }
     else {
-        if (mobile == 'android'){
+        if (mobile == "android"){
+            alert(mobile)
             location.href="https://play.google.com/store/apps/details?id=com.google.android.googlequicksearchbox";
         }
-        else if (mobile == 'ios'){
+        else if (mobile == "ios"){
+            alert(mobile)
             location.href="https://itunes.apple.com/kr/genre/ios/id36?mt=8";
         }
         else {

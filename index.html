@@ -5,7 +5,7 @@
     <title>디바이스 체크 페이지</title>
     <script type="text/javascript">
         function checkos(){
-            var mobileKeyWords = new Array('iPhone', 'iPod', 'BlackBerry', 'Android', 'Windows CE', 'LG', 'MOT', 'SAMSUNG', 'SonyEricsson');
+            var mobileKeyWords = new Array('iPhone', 'iPod', 'BlackBerry', 'Android', 'Windows CE', 'LG', 'MOT', 'SAMSUNG', 'SonyEricsson');/*기기 변수 설정*/
             var device_name = '';
             for (var word in mobileKeyWords){
                 if (navigator.userAgent.match(mobileKeyWords[word]) != null){
@@ -13,23 +13,19 @@
                     break;
                 }
             }
-            return device_name
+            return device_name /* 값 반환 */
         }
-
         var mobile = checkos();
     </script>
 </head>
 <body>
-<!--<input type="text" value="실패하셨습니다.">-->
 </body>
 <script type="text/javascript">
-    alert(mobile);
     if (mobile == ""){
-/*
         alert("브라우저 접속입니다.")
-*/
     }
     else {
+        alert(mobile + "접속입니다.")
         if (mobile == "Android"){
             location.href="https://play.google.com/store/apps/details?id=com.google.android.googlequicksearchbox";
         }

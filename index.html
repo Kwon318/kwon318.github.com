@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>디바이스 체크 페이지</title>
+    <script type="text/javascript">
+        function checkos() {
+            var mobileKeyWords = new Array('Android', 'iPhone', 'iPod', 'BlackBerry', 'Windows CE', 'SAMSUNG', 'LG', 'MOT', 'SonyEricsson');
+            for (var info in mobileKeyWords) {
+                if (navigator.userAgent.match(mobileKeyWords[info]) != null) {
+                    obileKeyWords[info]
+                    return obileKeyWords[info];
+                }
+            }
+            return false;
+        }
+        var mobile = checkos();
+    </script>
+</head>
+<body>
+<!--<input type="text" value="실패하셨습니다.">-->
+</body>
+<script type="text/javascript">
+    if (mobile == false){
+        alert("브라우저 접속입니다.")
+    }
+    else {
+        if (mobile == "android"){
+            location.href="https://play.google.com/store/apps/details?id=com.google.android.googlequicksearchbox";
+        }
+        else if (mobile == "ios"){
+            location.href="https://itunes.apple.com/kr/genre/ios/id36?mt=8";
+        }
+    }
+</script>
+</html>

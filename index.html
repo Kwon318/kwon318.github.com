@@ -4,16 +4,18 @@
     <meta charset="UTF-8">
     <title>디바이스 체크 페이지</title>
     <script type="text/javascript">
-        function checkos() {
-            var mobileKeyWords = new Array('Android', 'iPhone', 'iPod', 'BlackBerry', 'Windows CE', 'SAMSUNG', 'LG', 'MOT', 'SonyEricsson');
-            for (var info in mobileKeyWords) {
-                if (navigator.userAgent.match(mobileKeyWords[info]) != null) {
-                    var os = obileKeyWords[info];
-                    return os;
+        function checkos(){
+            var mobileKeyWords = new Array('iPhone', 'iPod', 'BlackBerry', 'Android', 'Windows CE', 'LG', 'MOT', 'SAMSUNG', 'SonyEricsson');
+            var device_name = '';
+            for (var word in mobileKeyWords){
+                if (navigator.userAgent.match(mobileKeyWords[word]) != null){
+                    device_name = mobileKeyWords[word];
+                    break;
                 }
             }
-            return "";
+            return device_name
         }
+
         var mobile = checkos();
     </script>
 </head>
@@ -21,18 +23,24 @@
 <!--<input type="text" value="실패하셨습니다.">-->
 </body>
 <script type="text/javascript">
+    alert(mobile);
     if (mobile == ""){
+/*
         alert("브라우저 접속입니다.")
+*/
     }
     else {
-        if (mobile == "android"){
+        if (mobile == "Android"){
             location.href="https://play.google.com/store/apps/details?id=com.google.android.googlequicksearchbox";
         }
-        else if (mobile == "ios"){
+        else if (mobile == "iPhone"){
             location.href="https://itunes.apple.com/kr/genre/ios/id36?mt=8";
         }
+        else if (mobile == "ios"){
+            location.href="https://www.naver.com";
+        }
         else {
-            alert(mobile);
+            alert("test 실패")
         }
     }
 </script>
